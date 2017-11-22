@@ -44,6 +44,17 @@ void timer(){
   }
 }
 
-void affiche_temps(){
-  printf("%s\n", minutes);
+/* Fonction d'affichage du temps restant */
+void affiche_temps() {
+
+  // Converti le temps restant en chaîne de caractères
+  char tmp[5];
+  sprintf(tmp, "%02d%02d", minutes_remain, secondes_remain);
+
+  // Active les doubles points horaire
+  Serial.write(AFF_CRTL_DP);
+  Serial.write(DP_HORAIRE);
+
+  // Affiche les 4 digits
+  Serial.write((uint8_t*)tmp, 4);
 }
