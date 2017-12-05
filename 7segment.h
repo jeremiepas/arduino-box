@@ -158,18 +158,18 @@ private:
   int pinG;
   int D;
  };
-  Segment minute;
-  Segment seconde;
-
-  int incomingByte =0;
-void setup() {
-
-    Serial.begin(9600);
-  minute.construct(2,3,4,5,6,7,8,9);
-  seconde.construct(2,3,4,5,6,7,8,10);
-  minute.setup();
-  seconde.setup();
-}
+//   Segment minute;
+//   Segment seconde;
+//
+//   int incomingByte =0;
+// void setup() {
+//
+//     Serial.begin(9600);
+//   minute.construct(2,3,4,5,6,7,8,9);
+//   seconde.construct(2,3,4,5,6,7,8,10);
+//   minute.setup();
+//   seconde.setup();
+// }
 /*
   Showing number 0-9 on a Common Anode 7-segment LED display
   Displays the numbers 0-9 on the display, with one second inbetween.
@@ -185,17 +185,17 @@ E |   | C
   This example code is in the public domain.
  */
 
-void loop() {
-     int i = -1;
-     int b = -1;
-     minute.writeint(0);
-  while(++i <= 9){
-        b = -1;
-    while(++b <= 9){
-      seconde.writeint(b);
-    delay(1000);
-    }
-      minute.writeint(i);
-  }
-
-}
+// void loop() {
+//      int i = -1;
+//      int b = -1;
+//      minute.writeint(0);
+//   while(++i <= 9){
+//         b = -1;
+//     while(++b <= 9){
+//       seconde.writeint(b);
+//     delay(1000);
+//     }
+//       minute.writeint(i);
+//   }
+//
+// }

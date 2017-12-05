@@ -185,17 +185,17 @@ E |   | C
   This example code is in the public domain.
  */
 
-void loop() {
-     int i = -1;
-     int b = -1;
-     minute.writeint(0);
-  while(++i <= 9){
-        b = -1;
-    while(++b <= 9){
-      seconde.writeint(b);
-    delay(1000);
-    }
-      minute.writeint(i);
-  }
-
-}
+// void loop() {
+//      int i = -1;
+//      int b = -1;
+//      minute.writeint(0);
+//   while(++i <= 9){
+//         b = -1;
+//     while(++b <= 9){
+//       seconde.writeint(b);
+//     delay(1000);
+//     }
+//       minute.writeint(i);
+//   }
+//
+// }
