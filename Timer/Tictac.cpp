@@ -1,8 +1,6 @@
 //#include <iostream>
 //using namespace std;
-#include "Arduino.h"
-#include "Timer.h"
-#include "time.h"	// class needs this inclusion
+#include "Tictac.h"
 
 
 
@@ -10,7 +8,7 @@
 // class implementation:
 
 
-Timer::Timer() {
+Tictac::Tictac() {
 	resetted = true;
 	running = false;
 	beg = 0;
@@ -20,7 +18,7 @@ Timer::Timer() {
 }
 
 
-void Timer::start() {
+void Tictac::start() {
 	if(! running) {
 		if(resetted)
 			beg = (unsigned long) clock();
@@ -32,7 +30,7 @@ void Timer::start() {
 }
 
 
-void Timer::stop() {
+void Tictac::stop() {
 	if(running) {
 		end = (unsigned long) clock();
 		running = false;
@@ -40,7 +38,7 @@ void Timer::stop() {
 }
 
 
-void Timer::reset() {
+void Tictac::reset() {
 	bool wereRunning = running;
 	if(wereRunning)
 		stop();
@@ -52,16 +50,16 @@ void Timer::reset() {
 }
 
 
-bool Timer::isRunning() {
+bool Tictac::isRunning() {
 	return running;
 }
 
 
-unsigned long Timer::getTime() {
+unsigned long Tictac::getTime() {
 	if(running){
 		if((((unsigned long) clock() - beg) / CLOCKS_PER_SEC) != tmp1){
 			tmp1 = ((unsigned long) clock() - beg) / CLOCKS_PER_SEC;
-			tmp = tmp - 1;
+			tmp =  (tmp1 - tmp);
 			return tmp;
 		}
 		return tmp;
@@ -70,7 +68,6 @@ unsigned long Timer::getTime() {
 }
 
 
-bool Timer::isOver(unsigned long seconds) {
+bool Tictac::isOver(unsigned long seconds) {
 	return seconds >= getTime();
 }
-

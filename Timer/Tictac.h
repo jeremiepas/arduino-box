@@ -1,9 +1,9 @@
-#ifndef Timer_h
-#define Timer_h
+#ifndef _Tictac_H_
+#define _Tictac_H_
 
 //#include <iostream>
 //using namespace std;
-#include "Arduino.h"
+// #include "Arduino.h"
 #include <time.h>	// class needs this inclusion
 
 
@@ -11,16 +11,8 @@
 // class declaration:
 
 
-class Timer
+class Tictac
 {
-	public:
-		Timer();
-		void           start();
-		void           stop();
-		void           reset();
-		bool           isRunning();
-		unsigned long  getTime();
-		bool           isOver(unsigned long seconds);
 	private:
 		bool           resetted;
 		bool           running;
@@ -28,8 +20,14 @@ class Timer
 		unsigned long tmp;
 		unsigned long  beg;
 		unsigned long  end;
+	public:
+		Tictac();
+		void           start();
+		void           stop();
+		void           reset();
+		bool           isRunning();
+		unsigned long  getTime();
+		bool           isOver(unsigned long seconds);
 };
-
-//extern TIMER_ TIMER
 
 #endif

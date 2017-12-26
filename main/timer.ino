@@ -1,56 +1,40 @@
-//namespace timer{
-//#include <iostream>
-//using namespace std;
-//#include <time.h>  // class needs this inclusion
-//
-//
-////////////////////////////////////////////
-//// class declaration:
-//
-//
-//
-//    bool           resetted;
-//    bool           running;
-//    int tmp1;
-//    unsigned long tmp;
-//    unsigned long  beg;
-//    unsigned long  end;
-//
-//
-//
-////////////////////////////////////////////
-//// class implementation:
-//
-//
-//Timer() {
-//  resetted = true;
-//  running = false;
-//  beg = 0;
-//  end = 0;
-//  tmp = 10;
-//  tmp1 = 0;
-//}
-//
-//
-//void start() {
-//  if(! running) {
-//    if(resetted)
-//      beg = (unsigned long) clock();
-//    else
-//      beg -= end - (unsigned long) clock();
-//    running = true;
-//    resetted = false;
-//  }
-//}
-//
-//timer() {
-//  if(running){
-//    if((((unsigned long) clock() - beg) / CLOCKS_PER_SEC) != tmp1){
-//      tmp1 = ((unsigned long) clock() - beg) / CLOCKS_PER_SEC;
-//      tmp = tmp - 1;
-//      return tmp;
-//    }
-//    return tmp;
-//  }else
-//    return end - beg;
-//}
+void timer(){
+       static unsigned long last_time = 0; // Temps antérieur
+  unsigned long time_now = millis();  // Temps actuel
+ 
+  // Si le minuteur est en marche
+
+    // Et que 1 sec s'est écoulée
+    if(time_now - last_time >= 1000) {
+ 
+      // Décrémentation des secondes
+      if(--secondes_remain < 0) {
+        secondes_remain = 59; // Si il n'y as plus de seconde
+ 
+        // Décrémentation des minutes
+        if(--minutes_remain < 0) {
+          minutes_remain = 0;   //
+          secondes_remain = 0; // Si il n'y as plus de minute
+ 
+          // Mise en marche du buzzer jusqu'à ce que l'utilisateur appui sur le bouton Start/Stop
+//          while(running) {
+//            tone(BUZZER_PIN, 500, 500);
+                m.clear();
+                m.writeSprite(0, 0, smile03);
+
+              delay(6000); 
+//          }
+ 
+          // Reprise à l'état initial
+          secondes_remain = 10;
+        }
+      }
+ 
+      // Affichage du temps restant
+      
+      last_time = time_now;
+    }
+  m.clear();
+  m.writeSprite(1,0, heart[secondes_remain/10]);
+  m.writeSprite(5, 0, heart[secondes_remain%10]);
+}
