@@ -26,3 +26,7 @@ Features:
     * Enter a rhythm sequence on the box (vibration sensor) or recognize a sound (a word or a musical tune?)
 
 __ ** Then the box opens.** __
+
+#### compile code on new arduino carte
+  1. install IDE arduino
+  2. 
