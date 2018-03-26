@@ -28,5 +28,5 @@ Features:
 __ ** Then the box opens.** __
 
 #### compile code on new arduino carte
-  1. install IDE arduino
-  2. 
+
+  1. download IDE arduino on website officiel
