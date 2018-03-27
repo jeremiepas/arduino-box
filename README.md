@@ -15,18 +15,18 @@ Features:
 
 ### the goal is to open a box after several steps
 
-  1. ** Step 1 **
+  1. **Step 1**
     * Sequence to enter switches
       - example: 2x Switch No. 1 / 1x Switch No. 2 / 1x Switch No. 3 / 1x Switch No. 4
 
-  2. ** step 2 **
+  2. **step 2**
     * Obstruct 2 or 3 sensors in a specific order
 
-  3. ** Step 3 **
+  3. **Step 3**
     * Enter a rhythm sequence on the box (vibration sensor) or recognize a sound (a word or a musical tune?)
 
-  4. ** Then the box opens.**
+  4. **Then the box opens.**
 
 #### compile code on new arduino carte
 
-  1. download IDE arduino on website officiel
+  1. download IDEcheck arduino on website officiel
